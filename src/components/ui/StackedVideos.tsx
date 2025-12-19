@@ -21,15 +21,16 @@ function VideoCard({
   const videoRef = useRef<HTMLVideoElement>(null);
   const isHovered = hoveredIndex === index;
   const shouldFade = hoveredIndex !== null && !isHovered;
+  const isGif = src.toLowerCase().endsWith('.gif');
 
   useEffect(() => {
-    // Autoplay when component mounts
-    if (videoRef.current) {
+    // Autoplay when component mounts (only for videos, not GIFs)
+    if (!isGif && videoRef.current) {
       videoRef.current.play().catch(() => {
         // Autoplay was prevented, that's okay
       });
     }
-  }, []);
+  }, [isGif]);
 
   return (
     <div
@@ -41,16 +42,24 @@ function VideoCard({
       onMouseEnter={() => onHover(index)}
       onMouseLeave={() => onHover(null)}
     >
-      <video
-        ref={videoRef}
-        muted
-        loop
-        playsInline
-        autoPlay
-        className="absolute inset-0 w-full h-full object-cover -skew-y-[0deg] scale-110"
-      >
-        <source src={src} type="video/mp4" />
-      </video>
+      {isGif ? (
+        <img
+          src={src}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover -skew-y-[0deg] scale-110"
+        />
+      ) : (
+        <video
+          ref={videoRef}
+          muted
+          loop
+          playsInline
+          autoPlay
+          className="absolute inset-0 w-full h-full object-cover -skew-y-[0deg] scale-110"
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      )}
     </div>
   );
 }

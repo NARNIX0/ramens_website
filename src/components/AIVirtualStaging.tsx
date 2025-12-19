@@ -2,9 +2,9 @@ import StackedVideos from './ui/StackedVideos';
 
 const AIVirtualStaging = () => {
   const videos = [
-    { src: "/videos/aivideoslooped-1.mp4", title: "Living Room Staging" },
-    { src: "/videos/aivideoslooped-2.mp4", title: "Bedroom Transformation" },
-    { src: "/videos/aivideoslooped-3.mp4", title: "Kitchen Enhancement" },
+    { src: "/videos/twilight-timelapse.gif", title: "Twilight Timelapse" },
+    { src: "/videos/living-room-staging.gif", title: "Living Room Staging" },
+    { src: "/videos/living-room-2-staging.gif", title: "Living Room Staging 2" },
   ];
 
   const features = [
