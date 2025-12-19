@@ -1,6 +1,10 @@
+import Button from './Button';
+
 const Hero = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
+  const whatsAppLink = "https://wa.me/447780038076?text=Hi%20Ramen%20Studios%20-%20I%20need%20professional%20property%20photography";
+
+  const scrollToWork = () => {
+    const element = document.getElementById('recent-work');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -10,40 +14,74 @@ const Hero = () => {
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: 'url(/ramen.jpeg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
     >
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: 'url(/ramen.jpeg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+      
+      {/* Overlay - Removed dark/40 overlay */}
+      {/* <div className="absolute inset-0 z-0 bg-dark/40" /> */}
+
       {/* Hero Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-32">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-0 py-32 text-left">
         <div className="max-w-5xl">
-          <h1 className="font-display text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] font-bold text-white mb-8 leading-none tracking-tight opacity-0 animate-fade-in-up">
-            I take nice photos
+          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 sm:mb-8 leading-tight tracking-tight opacity-0 animate-fade-in-up">
+            Sell Homes Faster & For Far More Money
           </h1>
           
-          <p className="font-body text-xl md:text-2xl text-white/90 mb-12 max-w-2xl opacity-0 animate-stagger-1">
-            Professional property photography for modern estate agents
+          <p className="font-body text-base sm:text-lg md:text-xl text-white/90 mb-8 sm:mb-12 font-medium opacity-0 animate-stagger-1 leading-relaxed tracking-tight max-w-3xl">
+            more viewings - more valuations - zero hassle<br className="hidden sm:block" />media partner for driven london agents<br className="hidden sm:block" />South West London & Surrey
           </p>
 
-          <div className="flex flex-wrap gap-4 opacity-0 animate-stagger-2">
-            <button 
-              onClick={() => scrollToSection('portfolio')}
-              className="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-body font-semibold text-lg transition-all hover:scale-105"
+          <div className="flex flex-col sm:flex-row justify-start gap-4 opacity-0 animate-stagger-2">
+            <a 
+              href={whatsAppLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto"
+            >
+              <Button 
+                variant="primary"
+                size="lg"
+                className="w-full sm:w-auto px-8 py-3 text-lg rounded-full"
+              >
+                Get Free Shoot
+              </Button>
+            </a>
+
+            <Button
+              onClick={scrollToWork}
+              className="w-full sm:w-auto px-8 py-3 text-lg rounded-full bg-white/15 backdrop-blur-md border border-white/60 text-white hover:bg-white/20 hover:text-white hover:border-white transition-all shadow-lg"
+              variant="secondary"
             >
               View Work
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-full font-body font-semibold text-lg transition-all"
-            >
-              Get in Touch
-            </button>
+            </Button>
           </div>
         </div>
       </div>
 
+      {/* Scroll Indicator - Hidden for now */}
+      {/* <div className="absolute bottom-40 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <svg 
+          className="w-6 h-6 text-white/70" 
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M19 14l-7 7m0 0l-7-7m7 7V3" 
+          />
+        </svg>
+      </div> */}
     </section>
   );
 };
