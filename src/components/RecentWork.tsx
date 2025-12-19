@@ -7,28 +7,28 @@ const RecentWork = () => {
   const recentProjects = [
     {
       id: '1',
-      image: '/properties/ash-house/preston property 4 hero photo.jpeg',
+      image: '/properties/ash-house/preston property 4 hero photo.webp',
       label: '4 Bedroom Family Home',
       location: 'Preston',
       description: 'Spacious detached property with modern finishes'
     },
     {
       id: '2',
-      image: '/properties/hoyles-lane/Preston property 3 hero photo .jpeg',
+      image: '/properties/hoyles-lane/Preston property 3 hero photo .webp',
       label: '5 Bedroom Luxury Property',
       location: 'Preston',
       description: 'Premium family residence with exceptional space'
     },
     {
       id: '3',
-      image: '/properties/lightfoot-lane/Preston property 1 photo hero photo.jpeg',
+      image: '/properties/lightfoot-lane/Preston property 1 photo hero photo.webp',
       label: '3 Bedroom Modern Home',
       location: 'Preston',
       description: 'Contemporary living in a prime location'
     },
     {
       id: '4',
-      image: '/properties/pendle-view-barn/Preston property 2 hero photo.jpeg',
+      image: '/properties/pendle-view-barn/Preston property 2 hero photo.webp',
       label: '5 Bedroom Converted Barn',
       location: 'Preston',
       description: 'Character property with unique charm'

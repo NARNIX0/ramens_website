@@ -1,0 +1,60 @@
+WEBP CONVERSION CHECKLIST
+==========================
+
+Total Images Found: 122
+
+ROOT FOLDER (3 images)
+-----------------------
+✓ ramen.jpeg
+✓ selfie-whilst-kayaking.jpeg
+✓ eye-icon.png
+
+SERVICES FOLDER (6 images)
+--------------------------
+✓ hdr photography example.jpeg
+✓ floor plan example.png
+✓ drone photo .png
+✓ 360 tour gif.gif
+✓ video tour gif.gif
+✓ marketing property landing page example.gif
+
+BEFORE-AFTER FOLDER (18 images)
+-------------------------------
+✓ before and after image 1A.png
+✓ before and after image 1B.png
+✓ before and after image 2A.png
+✓ before and after image 2B.jpeg
+✓ before and after image 3A.jpeg
+✓ before and after image 3B.jpeg
+✓ before and after image 4A.jpeg
+✓ before and after image 4B.jpeg
+✓ before and after image 5A.png
+✓ before and after image 5B.png
+✓ before and after image 6A.jpeg
+✓ before and after image 6B.jpeg
+✓ before and after image 7A.jpeg
+✓ before and after image 7B.jpeg
+✓ before and after image 8A.jpeg
+✓ before and after image 8B.png
+✓ before and after image 9A.jpeg
+✓ before and after image 9B.png
+
+PROPERTIES FOLDER (95 images)
+------------------------------
+ash-house/ (23 images)
+hoyles-lane/ (34 images)
+lightfoot-lane/ (25 images)
+pendle-view-barn/ (15 images)
+
+QUICK CONVERSION STEPS:
+1. Use Squoosh.app (https://squoosh.app) - easiest option
+2. Or use CloudConvert.com for batch conversion
+3. Save each WebP file in the SAME folder with .webp extension
+4. Keep original files (they'll be used as fallbacks)
+
+EXAMPLE:
+Original: public/ramen.jpeg
+WebP:     public/ramen.webp (same folder, same name, .webp extension)
+
+Once all WebP files are created, the OptimizedImage component will automatically use them!
+

@@ -20,7 +20,7 @@ const About = () => {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden border-4 border-accent shadow-xl relative z-10 bg-gray/10">
                 <OptimizedImage 
-                  src="/selfie-whilst-kayaking.jpeg" 
+                  src="/selfie-whilst-kayaking.webp" 
                   alt="Founder of Ramen Studios" 
                   className="w-full h-full object-cover"
                   priority={true}

@@ -208,7 +208,7 @@ const Services = () => {
         ]
       },
       mediaType: 'image',
-      mediaSrc: '/services/hdr photography example.jpeg',
+      mediaSrc: '/services/hdr photography example.webp',
       index: 0,
       objectPosition: '20% 30%',
       onOpenModal: handleOpenModal
@@ -227,7 +227,7 @@ const Services = () => {
         note: 'Multiply by number of floors if multi-level'
       },
       mediaType: 'image',
-      mediaSrc: '/services/floor plan example.png',
+      mediaSrc: '/services/floor plan example.webp',
       index: 1,
       onOpenModal: handleOpenModal
     },
@@ -283,8 +283,8 @@ const Services = () => {
         ]
       },
       mediaType: 'slider',
-      beforeImage: '/before-after/before and after image 2A.png',
-      afterImage: '/before-after/before and after image 2B.jpeg',
+      beforeImage: '/before-after/before and after image 2A.webp',
+      afterImage: '/before-after/before and after image 2B.webp',
       index: 4,
       onOpenModal: handleOpenModal
     },
@@ -303,8 +303,8 @@ const Services = () => {
         ]
       },
       mediaType: 'slider',
-      beforeImage: '/before-after/before and after image 4A.jpeg',
-      afterImage: '/before-after/before and after image 4B.jpeg',
+      beforeImage: '/before-after/before and after image 4A.webp',
+      afterImage: '/before-after/before and after image 4B.webp',
       index: 5,
       onOpenModal: handleOpenModal
     },
@@ -322,7 +322,7 @@ const Services = () => {
         ]
       },
       mediaType: 'image',
-      mediaSrc: '/services/drone photo .png',
+      mediaSrc: '/services/drone photo .webp',
       index: 6,
       onOpenModal: handleOpenModal
     },
@@ -339,8 +339,8 @@ const Services = () => {
         ]
       },
       mediaType: 'slider',
-      beforeImage: '/before-after/before and after image 1A.png',
-      afterImage: '/before-after/before and after image 1B.png',
+      beforeImage: '/before-after/before and after image 1A.webp',
+      afterImage: '/before-after/before and after image 1B.webp',
       index: 7,
       onOpenModal: handleOpenModal
     },
