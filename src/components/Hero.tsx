@@ -19,7 +19,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url(/ramen.jpeg)',
+          backgroundImage: 'url(/ramen.webp), url(/ramen.jpeg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
