@@ -93,4 +93,12 @@ const SocialProof = () => {
           mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
           -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
-        .pause 
+        .pause {
+          animation-play-state: paused;
+        }
+      `}</style>
+    </section>
+  );
+};
+
+export default SocialProof;

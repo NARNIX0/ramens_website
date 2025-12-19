@@ -7,6 +7,7 @@ interface OptimizedImageProps {
   sizes?: string;
   priority?: boolean;
   objectPosition?: string;
+  style?: React.CSSProperties;
 }
 
 /**
@@ -25,6 +26,7 @@ const OptimizedImage = ({
   sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
   priority = false,
   objectPosition,
+  style,
 }: OptimizedImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -59,6 +61,10 @@ const OptimizedImage = ({
 
   // If error loading WebP, fall back to original JPEG/PNG
   if (hasError) {
+    const combinedStyle = {
+      ...(objectPosition ? { objectPosition } : {}),
+      ...(style || {}),
+    };
     return (
       <img
         src={src}
@@ -67,7 +73,7 @@ const OptimizedImage = ({
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
         onLoad={handleLoad}
-        style={objectPosition ? { objectPosition } : undefined}
+        style={Object.keys(combinedStyle).length > 0 ? combinedStyle : undefined}
       />
     );
   }
@@ -103,7 +109,10 @@ const OptimizedImage = ({
         decoding="async"
         onLoad={handleLoad}
         onError={handleWebPError}
-        style={objectPosition ? { objectPosition } : undefined}
+        style={{
+          ...(objectPosition ? { objectPosition } : {}),
+          ...(style || {}),
+        }}
       />
     </picture>
   );

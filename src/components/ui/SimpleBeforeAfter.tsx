@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import OptimizedImage from '../OptimizedImage';
 
 interface SimpleBeforeAfterProps {
   beforeImage: string;
@@ -84,11 +85,11 @@ export default function SimpleBeforeAfter({ beforeImage, afterImage, className =
       onTouchStart={handleTouchStart}
     >
       {/* Before Image (Background) */}
-      <img
+      <OptimizedImage
         src={beforeImage}
         alt="Before"
         className="absolute inset-0 w-full h-full object-cover"
-        draggable={false}
+        sizes="100vw"
       />
 
       {/* After Image (Foreground, clipped) */}
@@ -98,11 +99,11 @@ export default function SimpleBeforeAfter({ beforeImage, afterImage, className =
           clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
         }}
       >
-        <img
+        <OptimizedImage
           src={afterImage}
           alt="After"
           className="absolute inset-0 w-full h-full object-cover"
-          draggable={false}
+          sizes="100vw"
         />
       </div>
 

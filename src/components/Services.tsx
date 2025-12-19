@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import SimpleBeforeAfter from './ui/SimpleBeforeAfter';
 import ServiceModal from './ui/ServiceModal';
+import OptimizedImage from './OptimizedImage';
 
 interface PricingTier {
   name: string;
@@ -112,11 +113,12 @@ const ServiceCard = ({
         onClick={handleCardClick}
       >
         {mediaType === 'image' && mediaSrc && (
-          <img
+          <OptimizedImage
             src={mediaSrc}
             alt={title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
-            style={{ objectPosition: objectPosition }}
+            objectPosition={objectPosition}
+            sizes="(max-width: 768px) 100vw, 33vw"
           />
         )}
         

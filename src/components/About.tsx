@@ -1,3 +1,5 @@
+import OptimizedImage from './OptimizedImage';
+
 const About = () => {
   const credentials = [
     'Adobe Suite Certified',
@@ -17,10 +19,12 @@ const About = () => {
           <div className="lg:col-span-2 order-1 lg:order-1">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               <div className="aspect-[4/5] rounded-3xl overflow-hidden border-4 border-accent shadow-xl relative z-10 bg-gray/10">
-                <img 
+                <OptimizedImage 
                   src="/selfie-whilst-kayaking.jpeg" 
                   alt="Founder of Ramen Studios" 
                   className="w-full h-full object-cover"
+                  priority={true}
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                 />
               </div>
               

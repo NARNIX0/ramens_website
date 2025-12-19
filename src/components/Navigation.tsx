@@ -127,51 +127,53 @@ const Navigation = () => {
       }`}>
         {/* Mobile Menu Button */}
         <div className="bg-white/95 backdrop-blur-lg shadow-2xl border border-gray/10 rounded-full p-2 overflow-x-auto no-scrollbar">
-          <div className="flex items-center justify-between gap-2 px-2 min-w-max mx-auto">
+          <div className="flex items-center justify-between gap-1 px-1 min-w-max mx-auto">
             <button
               onClick={() => handleNavigation('/')}
-              className={`flex flex-col items-center gap-1 px-4 py-2 rounded-xl hover:bg-light transition-colors min-w-[64px] ${location.pathname === '/' && !activeSection ? 'text-accent' : 'text-dark'}`}
+              className={`flex flex-col items-center gap-1 px-3 py-1.5 rounded-xl hover:bg-light transition-colors min-w-[56px] ${location.pathname === '/' && !activeSection ? 'text-accent' : 'text-dark'}`}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
-              <span className="font-body text-[10px] font-medium uppercase tracking-wide">Home</span>
+              <span className="font-body text-[9px] font-medium uppercase tracking-wide">Home</span>
             </button>
             <button
               onClick={() => handleNavigation('/', 'pricing')}
-              className={`flex flex-col items-center gap-1 px-4 py-2 rounded-xl hover:bg-light transition-colors min-w-[64px] ${activeSection === 'pricing' ? 'text-accent' : 'text-dark'}`}
+              className={`flex flex-col items-center gap-1 px-3 py-1.5 rounded-xl hover:bg-light transition-colors min-w-[56px] ${activeSection === 'pricing' ? 'text-accent' : 'text-dark'}`}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span className="font-body text-[10px] font-medium uppercase tracking-wide">Pricing</span>
+              <span className="font-body text-[9px] font-medium uppercase tracking-wide">Pricing</span>
             </button>
             <button
               onClick={() => handleNavigation('/', 'recent-work')}
-              className={`flex flex-col items-center gap-1 px-4 py-2 rounded-xl hover:bg-light transition-colors min-w-[64px] ${activeSection === 'recent-work' ? 'text-accent' : 'text-dark'}`}
+              className={`flex flex-col items-center gap-1 px-3 py-1.5 rounded-xl hover:bg-light transition-colors min-w-[56px] ${activeSection === 'recent-work' ? 'text-accent' : 'text-dark'}`}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              <span className="font-body text-[10px] font-medium uppercase tracking-wide">Work</span>
+              <span className="font-body text-[9px] font-medium uppercase tracking-wide">Work</span>
             </button>
             <button
               onClick={() => handleNavigation('/', 'about')}
-              className={`flex flex-col items-center gap-1 px-4 py-2 rounded-xl hover:bg-light transition-colors min-w-[64px] ${activeSection === 'about' ? 'text-accent' : 'text-dark'}`}
+              className={`flex flex-col items-center gap-1 px-3 py-1.5 rounded-xl hover:bg-light transition-colors min-w-[56px] ${activeSection === 'about' ? 'text-accent' : 'text-dark'}`}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
-              <span className="font-body text-[10px] font-medium uppercase tracking-wide">About</span>
+              <span className="font-body text-[9px] font-medium uppercase tracking-wide">About</span>
             </button>
             <div className="w-px h-8 bg-gray/20 mx-1"></div>
-            <Button
+            <button
               onClick={() => handleNavigation('/', 'contact')}
-              size="sm"
-              className="px-6 py-2 shadow-sm text-xs uppercase tracking-wide"
+              className={`flex flex-col items-center gap-1 px-3 py-1.5 rounded-full transition-colors min-w-[56px] bg-accent text-white hover:bg-accent/90 ${activeSection === 'contact' ? 'ring-2 ring-accent ring-offset-2' : ''}`}
             >
-              Contact
-            </Button>
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span className="font-body text-[9px] font-medium uppercase tracking-wide">Contact</span>
+            </button>
           </div>
         </div>
       </div>

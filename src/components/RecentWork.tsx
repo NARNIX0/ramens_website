@@ -91,3 +91,12 @@ const RecentWork = () => {
                   </span>
                 </div>
               </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default RecentWork;

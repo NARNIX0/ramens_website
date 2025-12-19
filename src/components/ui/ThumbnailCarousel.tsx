@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { motion, useMotionValue, animate, useTransform } from 'framer-motion';
+import OptimizedImage from '../OptimizedImage';
 
 export interface SliderItem {
   id: string | number;
@@ -153,12 +154,12 @@ function ComparisonSlider({ item }: { item: SliderItem }) {
       style={{ touchAction: 'pan-y' }}
     >
       {/* Before Image (Background) - shown as-is */}
-      <img
+      <OptimizedImage
         src={item.beforeImage}
         alt={`Before: ${item.label}`}
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{ willChange: 'transform' }}
-        draggable={false}
+        sizes="100vw"
       />
 
       {/* Before Label */}
@@ -174,11 +175,11 @@ function ComparisonSlider({ item }: { item: SliderItem }) {
           willChange: 'clip-path',
         }}
       >
-        <img
+        <OptimizedImage
           src={item.afterImage}
           alt={`After: ${item.label}`}
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          draggable={false}
+          sizes="100vw"
         />
         {/* After Label */}
         <div className="absolute top-4 left-4 bg-accent/90 backdrop-blur-sm px-3 py-1 rounded-full text-white text-xs font-semibold z-10 pointer-events-none">
@@ -279,11 +280,11 @@ function Thumbnails({ index, setIndex, items }: { index: number; setIndex: (i: n
               i === index ? 'border-accent' : 'border-transparent hover:border-accent/50'
             }`}
           >
-            <img
+            <OptimizedImage
               src={item.afterImage}
               alt={item.label}
               className="w-full h-full object-cover pointer-events-none select-none"
-              draggable={false}
+              sizes="(max-width: 768px) 25vw, 150px"
             />
           </motion.button>
         ))}

@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import OptimizedImage from '../components/OptimizedImage';
 
 // Extended property data with additional photos
 const propertyData: Record<string, {
@@ -218,10 +219,12 @@ const PropertyDetail = () => {
                 index === 0 ? 'md:col-span-2 aspect-[2/1]' : 'aspect-[4/3]'
               }`}
             >
-              <img
+              <OptimizedImage
                 src={image}
                 alt={`${property.label} - Photo ${index + 1}`}
                 className="w-full h-full object-cover md:hover:scale-105 transition-transform duration-500"
+                priority={index === 0}
+                sizes={index === 0 ? '(max-width: 768px) 100vw, 100vw' : '(max-width: 768px) 100vw, 50vw'}
               />
             </div>
           ))}
