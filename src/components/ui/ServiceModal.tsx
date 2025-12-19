@@ -30,11 +30,11 @@ export default function ServiceModal({
   category,
   description,
   pricing,
-  mediaType,
-  mediaSrc,
-  beforeImage,
-  afterImage,
-  videoSrc,
+  mediaType: _mediaType,
+  mediaSrc: _mediaSrc,
+  beforeImage: _beforeImage,
+  afterImage: _afterImage,
+  videoSrc: _videoSrc,
 }: ServiceModalProps) {
   const [selectedTierIndex, setSelectedTierIndex] = useState(0);
 

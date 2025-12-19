@@ -7,7 +7,7 @@ export interface SliderItem {
   beforeImage: string;
   afterImage: string;
   label: string;
-  caption: string;
+  caption?: string;
 }
 
 const FULL_WIDTH_PX = 120;
