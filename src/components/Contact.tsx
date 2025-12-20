@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import Button from './Button';
 
 const Contact = () => {
@@ -11,7 +12,15 @@ const Contact = () => {
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
   const whatsAppLink = "https://wa.me/447780038076?text=Hi%20Ramen%20Studios%20-%20I%20need%20professional%20property%20photography";
+
+  // Initialize EmailJS
+  const EMAILJS_SERVICE_ID = 'service_rqgbioh';
+  const EMAILJS_TEMPLATE_ID = 'template_s8n94b2';
+  const EMAILJS_PUBLIC_KEY = 'tRRpFVZxQAyJrZrv6';
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -22,10 +31,56 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you! We will be in touch shortly.');
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Initialize EmailJS with public key
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+
+      // Send email using EmailJS
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone || 'Not provided',
+          service: formData.service,
+          bedrooms: formData.bedrooms,
+          message: formData.message || 'No message provided',
+        }
+      );
+
+      setSubmitStatus('success');
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: 'Essential Package',
+        bedrooms: '3-4',
+        message: '',
+      });
+
+      // Clear success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 5000);
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setSubmitStatus('error');
+      
+      // Clear error message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -197,9 +252,27 @@ const Contact = () => {
                 type="submit"
                 className="w-full mt-4"
                 size="lg"
+                disabled={isSubmitting}
               >
-                Book My Shoot
+                {isSubmitting ? 'Sending...' : 'Book My Shoot'}
               </Button>
+
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <p className="text-green-800 font-body text-sm">
+                    ✓ Thank you! Your message has been sent. We'll be in touch shortly.
+                  </p>
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-800 font-body text-sm">
+                    ✗ Something went wrong. Please try again or contact us via WhatsApp.
+                  </p>
+                </div>
+              )}
             </form>
           </div>
         </div>
