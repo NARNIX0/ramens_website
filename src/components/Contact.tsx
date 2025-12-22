@@ -18,7 +18,7 @@ const Contact = () => {
   const whatsAppLink = "https://wa.me/447780038076?text=Hi%20Ramen%20Studios%20-%20I%20need%20professional%20property%20photography";
 
   // Initialize EmailJS
-  const EMAILJS_SERVICE_ID = 'service_rqgbioh';
+  const EMAILJS_SERVICE_ID = 'service_vshkbl8';
   const EMAILJS_TEMPLATE_ID = 'template_s8n94b2';
   const EMAILJS_PUBLIC_KEY = 'tRRpFVZxQAyJrZrv6';
 
