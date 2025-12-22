@@ -37,10 +37,7 @@ const Contact = () => {
     setSubmitStatus('idle');
 
     try {
-      // Initialize EmailJS with public key
-      emailjs.init(EMAILJS_PUBLIC_KEY);
-
-      // Send email using EmailJS
+      // Send email using EmailJS (public key is passed as 4th parameter)
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
@@ -51,7 +48,8 @@ const Contact = () => {
           service: formData.service,
           bedrooms: formData.bedrooms,
           message: formData.message || 'No message provided',
-        }
+        },
+        EMAILJS_PUBLIC_KEY
       );
 
       setSubmitStatus('success');
@@ -70,8 +68,14 @@ const Contact = () => {
       setTimeout(() => {
         setSubmitStatus('idle');
       }, 5000);
-    } catch (error) {
+    } catch (error: any) {
       console.error('EmailJS error:', error);
+      console.error('Error details:', {
+        text: error?.text,
+        status: error?.status,
+        serviceId: EMAILJS_SERVICE_ID,
+        templateId: EMAILJS_TEMPLATE_ID,
+      });
       setSubmitStatus('error');
       
       // Clear error message after 5 seconds
