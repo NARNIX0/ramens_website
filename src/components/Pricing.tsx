@@ -31,14 +31,15 @@ const packages: PackagePlan[] = [
   {
     name: 'ESSENTIAL',
     packagePrices: {
-      '1-2': 429,
-      '3-4': 579,
-      '5+': 999,
+      '1-2': 365,
+      '3-4': 499,
+      '5+': 799,
     },
     individualValues: {
-      '1-2': 480, // £180 + £50 + £250
-      '3-4': 700, // £300 + £50 + £350
-      '5+': 1200, // £500 + £50 + £650
+      // HDR Photography + Floor Plans (1 floor @ £50) + 360° Virtual Tours
+      '1-2': 180 + 50 + 180, // £410
+      '3-4': 300 + 50 + 275, // £625
+      '5+': 500 + 50 + 400, // £950
     },
     features: [
       'HDR Photography',
@@ -56,9 +57,11 @@ const packages: PackagePlan[] = [
       '5+': 1499,
     },
     individualValues: {
-      '1-2': 875, // £180 + £50 + £250 + £200 + £180 + £150
-      '3-4': 1230, // £300 + £50 + £350 + £200 + £180 + £150
-      '5+': 1790, // Updated from 1730 to match user's data
+      // HDR Photography + Floor Plans (1 floor @ £50) + Video Tours + 360° Virtual Tours + Drone Videography + Virtual Staging + Twilight Photography
+      // Virtual Staging: 1-2 bed (15 photos @ £15 = £225), 3-4 bed (20 photos @ £15 = £300), 5+ bed (25 photos @ £15 = £375)
+      '1-2': 180 + 50 + 250 + 180 + 200 + 225 + 150, // £1235
+      '3-4': 300 + 50 + 350 + 275 + 200 + 300 + 150, // £1625
+      '5+': 500 + 50 + 650 + 400 + 200 + 375 + 150, // £2325
     },
     features: [
       'HDR Photography',
@@ -80,9 +83,12 @@ const packages: PackagePlan[] = [
       '5+': 2399,
     },
     individualValues: {
-      '1-2': 1330, // £180 + £50 + £250 + £180 + £200 + £180 + £150 + £300 + £180
-      '3-4': 1985, // £300 + £50 + £350 + £275 + £200 + £180 + £150 + £300 + £180
-      '5+': 2960, // Updated from 2735 to match user's data
+      // HDR Photography + Floor Plans (1 floor @ £50) + Video Tours + 360° Virtual Tours + Drone Videography + Virtual Staging + Twilight Photography + Marketing Add-ons + Premium Touch-ups
+      // Virtual Staging: 1-2 bed (15 photos @ £15 = £225), 3-4 bed (20 photos @ £15 = £300), 5+ bed (25 photos @ £15 = £375)
+      // Premium Touch-ups: 1-2 bed (7 photos @ £10 = £70), 3-4 bed (12 photos @ £15 = £180), 5+ bed (17 photos @ £20 = £340)
+      '1-2': 180 + 50 + 250 + 180 + 200 + 225 + 150 + 150 + 70, // £1455
+      '3-4': 300 + 50 + 350 + 275 + 200 + 300 + 150 + 300 + 180, // £2105
+      '5+': 500 + 50 + 650 + 400 + 200 + 375 + 150 + 450 + 340, // £3115
     },
     features: [
       'HDR Photography',

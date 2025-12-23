@@ -372,7 +372,7 @@ const Services = () => {
         {/* Section Header */}
         <div className="max-w-3xl mb-12 md:mb-16">
           <h2 className="font-display text-4xl md:text-5xl font-bold text-dark leading-tight">
-            What I Offer
+            My Individual Services
           </h2>
         </div>
 
